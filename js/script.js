@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Timer
 
-    const actionEnd = new Date(2020, 11, 31, 23, 59, 59),
+    const actionEnd = new Date(2021, 0, 31, 23, 59, 59),
         days = document.querySelector('span#days'),
         hours = document.querySelector('span#hours'),
         minutes = document.querySelector('span#minutes'),
@@ -143,7 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     <div class="menu__item-divider"></div>
                     <div class="menu__item-price">
                         <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                        <div class="menu__item-total"><span>${this.price}</span> руб/день</div>
                     </div>
             `;
             this.parent.append(newDiv);
@@ -155,7 +155,7 @@ window.addEventListener('DOMContentLoaded', () => {
         "vegy",
         'Меню "Фитнес"',
         'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
-        229,
+        600,
         '.menu .container',
         'menu__item',
     ).createCard();
@@ -165,7 +165,7 @@ window.addEventListener('DOMContentLoaded', () => {
         "elite",
         'Меню "Премиум"',
         'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
-        550,
+        1450,
         '.menu .container',
         'menu__item',
     ).createCard();
@@ -175,7 +175,7 @@ window.addEventListener('DOMContentLoaded', () => {
         "post",
         'Меню "Постное"',
         'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
-        430,
+        1150,
         '.menu .container',
         'menu__item',
     ).createCard();
@@ -234,13 +234,13 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function showModalThanks(message) {
-        const prevModalDialog = document.querySelector('.modal__dialog');
+        const prevModalDialog = document.querySelector('div.modal__dialog');
 
         prevModalDialog.classList.add('hide');
         showModal();
 
         const thanksModal = document.createElement('div');
-        thanksModal.classList.add('modal-dialog');
+        thanksModal.classList.add('modal__dialog');
         thanksModal.innerHTML = `
         <div class="modal__content">
         <div class="modal__close" data-close>&times;</div>
@@ -256,5 +256,9 @@ window.addEventListener('DOMContentLoaded', () => {
             hideModal();
         }, 4000);
     }
+
+    fetch('http://localhosts:3000/menu')
+    .then(data => data.json())
+    .then(res => console.log(res));
 });
 
