@@ -22,5 +22,27 @@
       "price": 1150
     }
   ],
-  "requests": []
+  "requests": [
+    {
+      "name": "gia",
+      "phone": "+7 912 0188780",
+      "id": 1
+    },
+    {
+      "name": "Анна",
+      "phone": "(912) 010-35-43",
+      "id": 2
+    },
+    {
+      "name": "giajjj",
+      "phone": "+7 912 0188780",
+      "id": 3
+    },
+    {
+      "name": "kkkk",
+      "surname": "fdddd",
+      "phone": "89120188780",
+      "id": 4
+    }
+  ]
 }

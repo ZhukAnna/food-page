@@ -38,8 +38,6 @@ function calc() {
 
     function calcTotal() {
 
-        console.log(sex, height, weight, age, ratio);
-
         if (!sex || !height || !weight || !age || !ratio) {
             calcRes.textContent = '----';
             return;
